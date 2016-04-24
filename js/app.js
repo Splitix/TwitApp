@@ -1,5 +1,5 @@
 'use strict';
-angular.module('twitterapp', ['ngRoute', 'ui.router', 'twitterapp.controllers', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+angular.module('twitterapp', ['ngRoute', 'ui.router', 'twitterapp.controllers', 'twitterapp.services', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 .config(function($routeProvider, $stateProvider, $urlRouterProvider) {
 	console.log("App.js is being read");
 
