@@ -10,15 +10,16 @@ angular.module('twitterapp.controllers', [])
 
 .controller('TestCtlr', function($rootScope, $scope, GeoLocation){
 	console.log("Test Controller is being read");
-
+	var woeID;
+	var city;
 	$scope.search = function(searchQuery){
 		var zipCode = searchQuery.postalCode;
 		GeoLocation.location(searchQuery).success(function(data){
 			console.log(data);
-			var woeID = data['places']['place'][0]['woeid'];
+			woeID = data['places']['place'][0]['woeid'];
 			GeoLocation.cityName(zipCode).success(function(data){
-				console.log("City Info");
-				console.log(data);
+				city = data['places'][0]['place name'];
+				console.log(city);
 			}).error(function(data){
 				console.log("City name failed");
 			})
